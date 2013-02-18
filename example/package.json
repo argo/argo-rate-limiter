@@ -1,0 +1,17 @@
+{
+  "name": "argo-ratelimit-example",
+  "version": "0.0.0",
+  "description": "Rate limiting example for argo-server.",
+  "main": "server.js",
+  "dependencies": {
+    "argo-server": ">= 0.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": "",
+  "author": "Kevin Swiber <kswiber@gmail.com>",
+  "license": "MIT"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "argo-rate-limiter",
+  "version": "0.0.0",
+  "description": "Rate limiter for argo-server.",
+  "main": "limit.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "Kevin Swiber <kswiber@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "argo",
+    "rate",
+    "limit"
+  ]
+}
