@@ -33,6 +33,25 @@ argo()
   .listen(process.env.PORT || 1337);
 ```
 
+## Usage
+
+### limit(options)
+
+#### options.capacity
+
+The number of requests allowed.
+
+#### options.duration
+
+The maximum time allowed to consume the requests at capacity.
+
+#### options.burst
+
+The number of requests allowed to overflow in a burst scenario.  Optional.
+
+#### options.delay
+
+A delay applied to excess requests in a burst.  Optional.
 ## License
 
 MIT

@@ -4,7 +4,7 @@ var LeakyBucket = function(options) {
   this.burst = options.burst || 0;
   this.capacity = options.capacity || 1;
   this.duration = options.duration || 30000; //ms
-  this.delay = options.delay || -1;
+  this.delay = options.delay || 0;
 
   this.available = this.capacity;
   this.availableBurst = this.burst;
