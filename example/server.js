@@ -4,7 +4,7 @@ var limit = require('../');
 var options = {
   capacity: 3,
   duration: 5000,
-  burst: 3,
+  burst: 1,
   delay: 1000 
 };
 
