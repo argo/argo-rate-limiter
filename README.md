@@ -43,7 +43,7 @@ The number of requests allowed.
 
 #### options.duration
 
-The maximum time allowed to consume the requests at capacity.
+The maximum time allowed to consume the requests at capacity (in milliseconds).
 
 #### options.burst
 
@@ -51,7 +51,8 @@ The number of requests allowed to overflow in a burst scenario.  Optional.
 
 #### options.delay
 
-A delay applied to excess requests in a burst.  Optional.
+A delay applied to excess requests in a burst (in milliseconds).  Optional.
+
 ## License
 
 MIT
