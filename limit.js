@@ -6,11 +6,8 @@ var LeakyBucket = function(options) {
   this.duration = options.duration || 30000; //ms
   this.delay = options.delay || -1;
 
-  if (this.delay === -1) {
-    this.capacity += this.burst;
-  }
-
   this.available = this.capacity;
+  this.availableBurst = this.burst;
 
   this.burstCallbacks = [];
   this.lastCheck = Date.now();
@@ -25,12 +22,14 @@ LeakyBucket.prototype.fill = function(cb) {
 
   if (since >= this.duration) {
     this.available = this.capacity;
+    this.availableBurst = this.burst;
   }
 
   if (this.available === 0) {
-    if (this.delay > -1 && this.burstCallbacks.length < this.burst) {
-      this.burstCallbacks.push(cb);
-      setTimeout(this.dequeue(), this.delay);
+    if (this.availableBurst > 0) {
+      var that = this;
+      setTimeout(function() { cb(null, that.available) }, this.delay);
+      this.availableBurst = this.availableBurst - 1;
       return;
     }
 
@@ -40,14 +39,6 @@ LeakyBucket.prototype.fill = function(cb) {
     this.available--;
     cb(null, this.available);
   }
-};
-
-LeakyBucket.prototype.dequeue = function() {
-  var that = this;
-  return function() {
-    var cb = that.burstCallbacks.shift();
-    that.fill(cb);
-  };
 };
 
 var IPAddressRateLimiter = function(options) {

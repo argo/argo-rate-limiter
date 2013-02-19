@@ -1,11 +1,11 @@
 var argo = require('argo-server');
-var limit = require('./limit');
+var limit = require('../');
 
 var options = {
   capacity: 3,
   duration: 5000,
   burst: 3,
-  delay: 100 
+  delay: 1000 
 };
 
 argo()
