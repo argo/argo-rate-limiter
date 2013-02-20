@@ -17,7 +17,7 @@ var limit = require('argo-rate-limiter');
 var options = {
   capacity: 3,
   duration: 5000,
-  burst: 3,
+  burst: 5,
   delay: 100 
 };
 
@@ -47,7 +47,7 @@ The maximum time allowed to consume the requests at capacity (in milliseconds).
 
 #### options.burst
 
-The number of requests allowed to overflow in a burst scenario.  Optional.
+The number of requests allowed in a burst scenario.  Optional.
 
 #### options.delay
 

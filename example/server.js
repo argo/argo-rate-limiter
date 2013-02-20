@@ -1,11 +1,14 @@
 var argo = require('argo-server');
 var limit = require('../');
 
+// Allow 1 request every 5 seconds.
+// Allow bursts of 2 requests every 5 seconds.
+// In a burst, delay the excess request by 1 second.
 var options = {
-  capacity: 3,
-  duration: 5000,
-  burst: 1,
-  delay: 1000 
+  capacity: 1,
+  duration: 5000, // ms
+  burst: 2,
+  delay: 1000 //ms
 };
 
 argo()
