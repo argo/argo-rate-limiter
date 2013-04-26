@@ -1,10 +1,10 @@
 {
   "name": "argo-ratelimit-example",
   "version": "0.0.0",
-  "description": "Rate limiting example for argo-server.",
+  "description": "Rate limiting example for argo.",
   "main": "server.js",
   "dependencies": {
-    "argo-server": ">= 0.0.1"
+    "argo": ">= 0.0.1"
   },
   "devDependencies": {},
   "scripts": {

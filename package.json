@@ -1,7 +1,7 @@
 {
   "name": "argo-rate-limiter",
   "version": "0.0.1",
-  "description": "Rate limiter for argo-server.",
+  "description": "Rate limiter for argo.",
   "main": "limit.js",
   "directories": {
     "example": "example"

@@ -1,4 +1,4 @@
-var argo = require('argo-server');
+var argo = require('argo');
 var limit = require('../');
 
 // Allow 1 request every 5 seconds.

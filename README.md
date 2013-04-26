@@ -1,6 +1,6 @@
 # argo-rate-limiter
 
-Rate limiting for [argo-server](https://github.com/argo/argo).
+Rate limiting for [argo](https://github.com/argo/argo).
 
 ## Install
 
@@ -11,7 +11,7 @@ $ npm install argo-rate-limiter
 ## Example
 
 ```javascript
-var argo = require('argo-server');
+var argo = require('argo');
 var limit = require('argo-rate-limiter');
 
 var options = {
