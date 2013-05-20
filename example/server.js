@@ -15,7 +15,7 @@ argo()
   .use(limit(options))
   .get('/greeting', function(addHandler) {
     addHandler('request', function(env, next) {
-      env.response.headers['Content-Type'] = 'text/plain';
+      env.response.setHeader('Content-Type',  'text/plain');
       env.responseBody = 'Hello World!';
       next(env);
     });

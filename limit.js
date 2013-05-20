@@ -73,7 +73,7 @@ var limit = module.exports = function(options) {
           env.response.writeHead(503, { 'Content-Type': 'text/plain', 'Content-Length': body.length });
           env.response.end(body);
         } else {
-          env.response.headers['X-Remaining-API-Requests'] = remainingRequests;
+          env.response.setHeader('X-Remaining-API-Requests', remainingRequests);
           next(env);
         }
       });
