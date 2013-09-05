@@ -11,7 +11,8 @@
   },
   "repository": "",
   "devDependencies": {
-    "mocha": "~1.8.1"
+    "mocha": "~1.8.1",
+    "argo":"0.3.2"
   },
   "author": "Kevin Swiber <kswiber@gmail.com>",
   "license": "MIT",

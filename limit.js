@@ -56,16 +56,23 @@ IPAddressRateLimiter.prototype.decrement = function(ip, cb) {
   this.addresses[ip].fill(cb);
 };
 
+IPAddressRateLimiter.prototype.findAddress = function(request){
+  var ip = request.connection.remoteAddress;
+
+  var forwarded = request.headers['x-forwarded-for'];
+  if (forwarded) {
+    ip = forwarded.split(',')[0];
+  }
+
+  return ip;
+}
+
 var limit = module.exports = function(options) {
   var limiter = new IPAddressRateLimiter(options);
   return function(addHandler) {
     addHandler('request', function(env, next) {
-      var ip = env.request.connection.remoteAddress;
 
-      var forwarded = env.request.headers['x-forwarded-for'];
-      if (forwarded) {
-        ip = forwarded.split(',')[0];
-      }
+      var ip = limiter.findAddress(env.request);
 
       limiter.decrement(ip, function(err, remainingRequests) {
         if (err) {
