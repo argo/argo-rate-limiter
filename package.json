@@ -7,9 +7,12 @@
     "example": "example"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/.bin/mocha -R spec --timeout 10000"
   },
   "repository": "",
+  "devDependencies": {
+    "mocha": "~1.8.1"
+  },
   "author": "Kevin Swiber <kswiber@gmail.com>",
   "license": "MIT",
   "keywords": [
